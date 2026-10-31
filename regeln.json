@@ -1,0 +1,9 @@
+{
+  "erlaubteGruppen": [
+    "demo-leser",
+    "demo-administratoren"
+  ],
+  "verantwortlicherErforderlich": true,
+  "inaktivesKontoPruefen": true,
+  "modus": "nur-beispieldaten-lesen"
+}
