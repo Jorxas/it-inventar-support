@@ -1,0 +1,27 @@
+{
+    "projekt":  "P08",
+    "modus":  "nur-beispieldaten-lesen",
+    "erstelltAm":  "2026-11-02T09:25:52.8138478+01:00",
+    "quelle":  "beispieldaten/inventar.json",
+    "regeln":  "regeln.json",
+    "anzahlDatensaetze":  2,
+    "anzahlMeldungen":  3,
+    "meldungen":  [
+                      {
+                          "geraet":  "DEMO-PC-02",
+                          "art":  "nicht-erlaubte-gruppe",
+                          "meldung":  "Gruppe Jeder ist im Beispiel nicht zugelassen; Hinweis auf zu breite Rechte."
+                      },
+                      {
+                          "geraet":  "DEMO-PC-02",
+                          "art":  "fehlende-verantwortung",
+                          "meldung":  "Eine Verantwortung fehlt."
+                      },
+                      {
+                          "geraet":  "DEMO-PC-02",
+                          "art":  "inaktivitaetskennzeichen",
+                          "meldung":  "Inaktives Konto im Beispiel gekennzeichnet; keine eigene Kontokennung vorhanden."
+                      }
+                  ],
+    "grenze":  "Nur synthetische Daten. Keine ACL- oder AD-Pruefung; kein Nachweis von NIS-2-Konformitaet."
+}

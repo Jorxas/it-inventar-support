@@ -1,6 +1,6 @@
 # IT-Inventar und Zugriffsprüfung
 
-Stand: 1. November 2026 — **P08-T01 abgeschlossen; automatische Rechteprüfung und weitere Basisphasen offen**. Geplanter Abschluss der Basis: 2026-11-06, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 2. November 2026 — **P08-T01 und der begrenzte Endpunkt P08-T02 abgeschlossen; weitere Basisphasen offen**. Geplanter Abschluss der Basis: 2026-11-06, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein IT-Team möchte Geräte erfassen, zu weit gefasste Rechte finden und Supportabläufe beschreiben.
 
@@ -38,7 +38,17 @@ Zulässige Gruppen sind exakt `demo-leser` und `demo-administratoren` (`erlaubte
 
 Die manuelle Vollständigkeitsprüfung ergibt: Alle fünf Felder sind in beiden Datensätzen vorhanden; die Zuständigkeit des zweiten Datensatzes ist absichtlich inhaltlich unvollständig. Die vier Regelangaben decken die drei vorgesehenen Auffälligkeiten und den Lesemodus ab. Zugriffsstufen wie Lesen/Schreiben, eine Kontozuordnung und eine tatsächliche ACL-Auswertung sind nicht modelliert. Die Zulassung von `demo-administratoren` ist eine Vorgabe des Beispiels und kein Nachweis angemessener Produktivrechte.
 
-Die tatsächliche Strukturprüfung und der vorhandene Einstieg wurden ausgeführt; Anleitung und Nachweise stehen in [START.md](START.md) und [nachweise/P08-T01-pruefung.txt](nachweise/P08-T01-pruefung.txt). Der Einstieg liest zwei Datensätze und meldet ausdrücklich, dass die Rechteprüfung noch offen ist. Übergreifende Lastenheftkriterien bleiben offen. Weder AD-Administration noch NIS-2-Konformität oder menschliche Eigenleistung werden damit belegt.
+Die tatsächliche Strukturprüfung und der damalige Einstieg wurden in P08-T01 ausgeführt; Nachweis: [P08-T01-pruefung.txt](nachweise/P08-T01-pruefung.txt). Damals war die automatische Auswertung noch offen. Übergreifende Lastenheftkriterien bleiben offen. Weder AD-Administration noch NIS-2-Konformität oder menschliche Eigenleistung werden damit belegt.
+
+## Schreibgeschützte Beispielprüfung — P08-T02
+
+`src/inventar.ps1` liest ausschließlich `beispieldaten/inventar.json` und `regeln.json`. Der Vergleich erfolgt mit den exakt geschriebenen erlaubten Gruppennamen (`-cnotcontains`). Leere Verantwortung und das boolesche Inaktivitätskennzeichen werden gemäß den Regeln gemeldet. Der optionale Parameter `-Beispieldatei` akzeptiert nur dieselbe fest benannte Inventardatei. Verknüpfungen an den geprüften Eingabe- und Ausgabeorten werden abgewiesen.
+
+Der Aufruf erstellt bzw. ersetzt nur `ausgabe/rechtebericht.json`. „Schreibgeschützt“ bezieht sich auf die Eingaben und Zugriffsrechte; die lokale Berichtsausgabe ist beabsichtigt. Inventarpfade und Gruppen werden als Daten behandelt. Es gibt keine ACL-Abfrage oder ACL-Änderung, keine AD-Abfrage und keinen Systemscan.
+
+Tatsächlich geprüft unter Windows PowerShell 5.1.26100.9818: zwei Datensätze, drei Meldungen für DEMO-PC-02 (Gruppe `Jeder`, fehlende Verantwortung, Inaktivitätskennzeichen); keine Meldung für DEMO-PC-01. Eine andere lokale Eingabedatei wird vor dem Lesen mit Exitcode 1 abgewiesen, ohne den bestehenden Bericht zu ändern. SHA256 der beiden Beispieldateien und der Regeln bleiben gleich. [Start und Abnahme](START.md), [Prüfprotokoll](nachweise/P08-T02-pruefung.txt), [Berichtskopie](nachweise/P08-T02-rechtebericht.json).
+
+Grenze: „Zu breite Rechte“ bedeutet hier ausschließlich eine nicht zugelassene synthetische Gruppe. Das Inaktivitätskennzeichen belegt kein identifiziertes reales Konto. Keine praktische Verwendung von Windows/AD oder lizenzpflichtigen Produkten und keine NIS-2-Konformität ableiten. Lastenheft A1–A4 werden durch diese begrenzte Ticketabnahme nicht insgesamt abgehakt. Projektkonfiguration bleibt beim Gesamtstatus `initialisiert` und `businessImplemented: false`, da der gesamte Lieferumfang noch offen ist.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 
