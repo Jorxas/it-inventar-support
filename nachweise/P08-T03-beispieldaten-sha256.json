@@ -1,0 +1,39 @@
+{
+    "vorher":  [
+                   {
+                       "pfad":  "beispieldaten/inventar.json",
+                       "sha256":  "5F5C02E9A235A8ABCB8F4C1AE65FA0421B6FF08C5CAEFC3CA3A0918E54AD133A"
+                   },
+                   {
+                       "pfad":  "beispieldaten/demo-dokumente/beispiel.txt",
+                       "sha256":  "558E723C9359D785135C2EB839D769624BB98B2AF9954B5EFBC3AD3416439D2F"
+                   },
+                   {
+                       "pfad":  "regeln.json",
+                       "sha256":  "D8EA64782A1CB50C0AF1415A0BA34957305DA457BDBAD204C994E21652678F85"
+                   },
+                   {
+                       "pfad":  "nachweise/P08-T03-szenarien.json",
+                       "sha256":  "EA4D4DE278E9C9E5BAA76DD4667EE6397DB7E3DEE050B2523F55E3DF45EDCA77"
+                   }
+               ],
+    "nachher":  [
+                    {
+                        "pfad":  "beispieldaten/inventar.json",
+                        "sha256":  "5F5C02E9A235A8ABCB8F4C1AE65FA0421B6FF08C5CAEFC3CA3A0918E54AD133A"
+                    },
+                    {
+                        "pfad":  "beispieldaten/demo-dokumente/beispiel.txt",
+                        "sha256":  "558E723C9359D785135C2EB839D769624BB98B2AF9954B5EFBC3AD3416439D2F"
+                    },
+                    {
+                        "pfad":  "regeln.json",
+                        "sha256":  "D8EA64782A1CB50C0AF1415A0BA34957305DA457BDBAD204C994E21652678F85"
+                    },
+                    {
+                        "pfad":  "nachweise/P08-T03-szenarien.json",
+                        "sha256":  "EA4D4DE278E9C9E5BAA76DD4667EE6397DB7E3DEE050B2523F55E3DF45EDCA77"
+                    }
+                ],
+    "unveraendert":  true
+}

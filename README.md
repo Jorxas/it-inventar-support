@@ -1,6 +1,6 @@
 # IT-Inventar und Zugriffsprüfung
 
-Stand: 2. November 2026 — **P08-T01 und der begrenzte Endpunkt P08-T02 abgeschlossen; weitere Basisphasen offen**. Geplanter Abschluss der Basis: 2026-11-06, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 4. November 2026 — **P08-T01 sowie die begrenzten Endpunkte P08-T02 und P08-T03 abgeschlossen; P08-T04 offen**. Geplanter Abschluss der Basis: 2026-11-06, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein IT-Team möchte Geräte erfassen, zu weit gefasste Rechte finden und Supportabläufe beschreiben.
 
@@ -49,6 +49,12 @@ Der Aufruf erstellt bzw. ersetzt nur `ausgabe/rechtebericht.json`. „Schreibges
 Tatsächlich geprüft unter Windows PowerShell 5.1.26100.9818: zwei Datensätze, drei Meldungen für DEMO-PC-02 (Gruppe `Jeder`, fehlende Verantwortung, Inaktivitätskennzeichen); keine Meldung für DEMO-PC-01. Eine andere lokale Eingabedatei wird vor dem Lesen mit Exitcode 1 abgewiesen, ohne den bestehenden Bericht zu ändern. SHA256 der beiden Beispieldateien und der Regeln bleiben gleich. [Start und Abnahme](START.md), [Prüfprotokoll](nachweise/P08-T02-pruefung.txt), [Berichtskopie](nachweise/P08-T02-rechtebericht.json).
 
 Grenze: „Zu breite Rechte“ bedeutet hier ausschließlich eine nicht zugelassene synthetische Gruppe. Das Inaktivitätskennzeichen belegt kein identifiziertes reales Konto. Keine praktische Verwendung von Windows/AD oder lizenzpflichtigen Produkten und keine NIS-2-Konformität ableiten. Lastenheft A1–A4 werden durch diese begrenzte Ticketabnahme nicht insgesamt abgehakt. Projektkonfiguration bleibt beim Gesamtstatus `initialisiert` und `businessImplemented: false`, da der gesamte Lieferumfang noch offen ist.
+
+## Simulierte Supportfälle — P08-T03
+
+Drei unabhängige [Supportfälle](nachweise/P08-T03-supportfaelle.md) beschreiben die schrittweise Diagnose, Maßnahme, Ergebnisprüfung und Eskalation: falsche DNS-Konfiguration, verweigerter Schreibzugriff bei einer Leserrolle und ein ausgeschalteter Rechner. Die [Szenariokarten](nachweise/P08-T03-szenarien.json) enthalten ausschließlich vorgegebene synthetische Beobachtungen zu den beiden vorhandenen Geräten; das Inventar bleibt unverändert bei zwei Einträgen.
+
+Die lokale [Abnahme](START.md) mit Windows PowerShell 5.1.26100.9818 wurde erfolgreich ausgeführt: Netzwerk- und Erreichbarkeitsfall im Modell behoben; Schreibbedarf bleibt zur Freigabe eskaliert, ohne Rechte auszuweiten. [Prüfprotokoll](nachweise/P08-T03-pruefung.txt) und [SHA256-Vergleich](nachweise/P08-T03-beispieldaten-sha256.json) sichern die Ergebnisse. Die Auswertung prüft vorgegebene Vorher-/Nachher-Werte; sie führt keine echte Reparatur durch. Zugriffsstufen sind nur Annahmen der Supportkarte, keine Erweiterung des Inventarmodells. Kein Nachweis von Windows-/AD-Administration oder Produktbeherrschung. Lastenheft A1–A4 und Projektgesamtstatus bleiben unverändert; kein Risikoregister oder Folgeticket bearbeitet.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
 

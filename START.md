@@ -36,6 +36,20 @@ Ausgaben: `nachweise/P08-T02-pruefung.txt`, `nachweise/P08-T02-beispieldaten-sha
 
 Grenze: Nicht zugelassene Gruppennamen stehen für zu breite Beispielrechte; das Inaktivitätskennzeichen enthält keine Kontokennung. Keine echte ACL-Auswertung, AD-Administration oder NIS-2-Abnahme. Der freigegebene Endpunkt P08-T02 ist beendet. Weitere Tickets benötigen eine eigene Freigabe.
 
+## Lokale Fallübung und Abnahme — P08-T03
+
+Voraussetzung: vorhandene PowerShell, keine Domäne und keine zusätzlichen Module. Zuerst `nachweise/P08-T03-supportfaelle.md` lesen. Dann im Projektordner ausführen:
+
+~~~powershell
+powershell -NoProfile -File nachweise/P08-T03-pruefen.ps1
+~~~
+
+Tatsächlich ausgeführt unter Windows PowerShell **5.1.26100.9818**, Exitcode 0. Das Skript liest das feste Beispielinventar und `nachweise/P08-T03-szenarien.json`, wertet genau drei unabhängige Karten aus und prüft deren Voraussetzungen und Ergebniszustände. Erwartet: DNS-Fall im Modell behoben; Schreibzugriff bleibt verweigert und wird zur Entscheidung eskaliert; ausgeschalteter Rechner ist in der Nachkontrolle erreichbar. Die fehlende Pingantwort allein begründet dabei keine Diagnose; die Karte enthält zusätzlich den lokalen Ausschaltbefund.
+
+Beobachtungen und Nachkontrollen sind vollständig vorgegeben und synthetisch. Das Skript stellt keine Netzverbindung her, fragt keine ACLs ab und ändert keine Rechte oder Geräte. Es automatisiert nur die lokale Fallauswertung, keine Produktdiagnose. Pfade sind relativ zum Skriptort aufgelöst. Der Skriptrumpf und die Fallbeschreibung erklären die Entscheidungen; das Inventar enthält weiterhin zwei Einträge ohne echte Konten oder ACLs.
+
+Ausgaben: `nachweise/P08-T03-pruefung.txt` (Zeitpunkte, Laufzeitversion, drei bearbeitete Fälle) und `nachweise/P08-T03-beispieldaten-sha256.json` (unveränderte Beispieldaten, Regeln und Karten). Wiederholen ersetzt diese beiden Nachweise; vorhandene T01-/T02-Belege werden nicht überschrieben. Der begrenzte Endpunkt ist beendet, weitere Phasen benötigen eine eigene Freigabe. Lastenheftkriterien und Gesamtstatus werden hier nicht abgehakt.
+
 ## Technische Quellen
 
 - [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)
