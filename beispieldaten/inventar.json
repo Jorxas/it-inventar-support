@@ -1,0 +1,20 @@
+[
+  {
+    "geraet": "DEMO-PC-01",
+    "verantwortlich": "demo-team",
+    "pfad": "beispieldaten/demo-dokumente",
+    "gruppen": [
+      "demo-leser"
+    ],
+    "inaktiv": false
+  },
+  {
+    "geraet": "DEMO-PC-02",
+    "verantwortlich": null,
+    "pfad": "beispieldaten/demo-dokumente",
+    "gruppen": [
+      "Jeder"
+    ],
+    "inaktiv": true
+  }
+]

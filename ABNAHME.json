@@ -1,0 +1,17 @@
+{
+  "projekt": "P08",
+  "phase": 3,
+  "snapshot": "3e797dd54c9b36e5000632ef062dd2d317c29ff5f70dfc4ea2bc05c0c420bbcc",
+  "quellcommit": "a42e49d73c3f24b1c1a787888ae6c93746b75712",
+  "lokal_committet_am": "2026-11-10T01:53:34+01:00",
+  "technisch_gesichert_am": "2026-11-04T02:01:07.995Z",
+  "unveraenderlicher_quellstand_geprueft": true,
+  "redaktionell_angepasst": [
+    "nachweise/P08-T01-beispieldaten-sha256.json",
+    "nachweise/P08-T02-beispieldaten-sha256.json",
+    "nachweise/P08-T02-rechtebericht.json",
+    "nachweise/P08-T03-beispieldaten-sha256.json"
+  ],
+  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten.",
+  "veroeffentlichungskopie_fachlich_geprueft_am": "2026-11-18T15:21:46.334Z"
+}

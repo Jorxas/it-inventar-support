@@ -1,0 +1,24 @@
+{
+  "modus": "vorgegebene-synthetische-beobachtungen",
+  "faelle": [
+    {
+      "kennung": "netzwerk",
+      "geraet": "DEMO-PC-01",
+      "vorher": { "verbindung": true, "gateway": true, "dienstPerAdresse": true, "namensaufloesung": false, "dnsServer": "192.0.2.54" },
+      "sollDnsServer": "192.0.2.53",
+      "nachher": { "verbindung": true, "gateway": true, "dienstPerAdresse": true, "namensaufloesung": true, "dnsServer": "192.0.2.53" }
+    },
+    {
+      "kennung": "zugriffsverweigerung",
+      "geraet": "DEMO-PC-01",
+      "vorher": { "dienstErreichbar": true, "angemeldet": true, "gruppe": "demo-leser", "lesen": true, "schreiben": false },
+      "nachher": { "dienstErreichbar": true, "angemeldet": true, "gruppe": "demo-leser", "lesen": true, "schreiben": false }
+    },
+    {
+      "kennung": "rechner-unerreichbar",
+      "geraet": "DEMO-PC-02",
+      "vorher": { "pingAntwort": false, "dienstErreichbar": false, "lokalEingeschaltet": false },
+      "nachher": { "pingAntwort": true, "dienstErreichbar": true, "lokalEingeschaltet": true }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "P08",
+  "status": "initialisiert",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/inventar.json",
+  "format": "json",
+  "expectedRecords": 2,
+  "starter": "src/inventar.ps1",
+  "command": "powershell -NoProfile -File src/inventar.ps1",
+  "implementationTickets": [
+    "P08-T01",
+    "P08-T02",
+    "P08-T03",
+    "P08-T04"
+  ],
+  "language": "de"
+}
